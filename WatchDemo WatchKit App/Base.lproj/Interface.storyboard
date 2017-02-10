@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jRC-W1-IZH">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11508"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="WatchDemo_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="100" height="92" alignment="left" layout="vertical" spacing="11" id="16d-xb-nYG" userLabel="Group1">
+                            <items>
+                                <button width="1" alignment="left" title="1" id="whv-0k-8kw"/>
+                                <button width="1" alignment="left" title="2" id="Jj7-St-pON"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" spacing="12" id="JC1-xd-DHq" userLabel="Group2">
+                            <items>
+                                <button width="52" alignment="left" title="3" id="2bM-IV-2t9"/>
+                                <button width="64" height="38" alignment="left" title="4" id="eDT-0K-pyH"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <segue destination="q38-g3-p9o" kind="relationship" relationship="nextPage" id="LoF-VH-Gri"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="194" y="254"/>
+        </scene>
+        <!--Test Interface Controller-->
+        <scene sceneID="SPT-iN-j8Y">
+            <objects>
+                <controller id="q38-g3-p9o" customClass="TestInterfaceController" customModule="WatchDemo_WatchKit_Extension">
+                    <items>
+                        <switch width="1" alignment="left" value="YES" title="Switch" id="EIb-n8-ig2"/>
+                        <slider width="1" alignment="left" value="1" maximum="3" steps="3" id="RkH-Q6-FI7"/>
+                        <imageView height="62" alignment="left" id="exI-8p-55q"/>
+                        <label alignment="left" text="Just Test Label" id="2yG-6V-0Xf"/>
+                        <picker height="100" alignment="left" id="jag-oe-Klm"/>
+                        <dateLabel alignment="left" id="Kmx-hr-ltQ">
+                            <dateFormatterStyle key="dateStyle" short="YES"/>
+                            <dateFormatterStyle key="timeStyle" short="YES"/>
+                        </dateLabel>
+                        <timer alignment="left" id="ag4-UF-g4L"/>
+                    </items>
+                    <connections>
+                        <segue destination="5qW-gj-ZI5" kind="relationship" relationship="nextPage" id="UI2-Vf-nAd"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="538" y="254"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="ibw-de-8R5">
+            <objects>
+                <controller id="7dG-1R-9fu">
+                    <items>
+                        <label width="111" height="69" alignment="left" text="跳转到这" id="1W4-h8-CKG"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-162" y="900"/>
+        </scene>
+        <!--Test Table Interface Controller-->
+        <scene sceneID="acZ-ZY-L18">
+            <objects>
+                <controller id="5qW-gj-ZI5" customClass="TestTableInterfaceController" customModule="WatchDemo_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="ipf-Ll-WFr">
+                            <items>
+                                <tableRow identifier="cellId" id="Lam-3G-tF8" customClass="TestTableCell" customModule="WatchDemo_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" spacing="10" id="L1N-td-5lP">
+                                        <items>
+                                            <imageView width="36" height="36" alignment="left" id="D0E-LD-akz"/>
+                                            <label width="88" alignment="left" text="Label" id="8sQ-hT-S8Q"/>
+                                        </items>
+                                        <connections>
+                                            <segue destination="7dG-1R-9fu" kind="push" identifier="postId" id="9Vt-mM-eQB"/>
+                                        </connections>
+                                    </group>
+                                    <connections>
+                                        <outlet property="icon" destination="D0E-LD-akz" id="ut6-eE-Xpy"/>
+                                        <outlet property="leftTitle" destination="8sQ-hT-S8Q" id="XH8-mH-zVB"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="ipf-Ll-WFr" id="vZD-g1-jgV"/>
+                        <segue destination="jRC-W1-IZH" kind="relationship" relationship="nextPage" id="LMX-kQ-gAK"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="152" y="702"/>
+        </scene>
+        <!--Test Map Interface Controller-->
+        <scene sceneID="NTZ-rP-iwj">
+            <objects>
+                <controller id="jRC-W1-IZH" customClass="TestMapInterfaceController" customModule="WatchDemo_WatchKit_Extension">
+                    <items>
+                        <map height="100" alignment="left" id="tkf-hb-aUf"/>
+                        <movie width="1" height="100" alignment="left" id="vXN-NY-xdM"/>
+                    </items>
+                    <connections>
+                        <outlet property="map" destination="tkf-hb-aUf" id="CKY-NF-JCX"/>
+                        <outlet property="myMovie" destination="vXN-NY-xdM" id="Wdg-4Q-FiX"/>
+                        <segue destination="6le-Dg-wyd" kind="relationship" relationship="nextPage" id="fbk-CC-Szm"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="551" y="720"/>
+        </scene>
+        <!--Test Core Data Interface Controller-->
+        <scene sceneID="2qA-vY-QbW">
+            <objects>
+                <controller id="6le-Dg-wyd" customClass="TestCoreDataInterfaceController" customModule="WatchDemo_WatchKit_Extension">
+                    <items>
+                        <label width="128" alignment="left" text="This is core data" id="jyB-l9-z3R"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="169" y="1091"/>
+        </scene>
+    </scenes>
+</document>
